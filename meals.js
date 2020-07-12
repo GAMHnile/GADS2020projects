@@ -130,7 +130,7 @@ const displayActivity =()=>{
            break;
             
         default:
-           currentActivity.innerHTML= null; 
+           currentActivity.innerHTML= "It's not meal time I'm probably coding"; 
            
            
            }   
