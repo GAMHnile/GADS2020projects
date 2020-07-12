@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Compressed CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+
+<!-- Compressed JavaScript -->
+
+    <link rel="stylesheet" href="meal-alarm.css">
+    <title>Meal Alarm</title>
+</head>
+<body onload="startTime()">
+   <!--s1-clock -->
+   <section>
+      <div class="grid-container">
+           <div id="main-time"></div>
+      </div>
+   </section>
+   <!--s2-entry-form -->
+   <section >
+       <form id="save-form" >
+          <div class="grid-container">
+            <label>Choose meal period
+              <select id="save-form_period" required>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+              </select>
+            </label>
+            
+            <label>Meal name
+              <input id="save-form_meal-name" type="text" placeholder="e.g Rice" required>
+            </label>
+            
+            <label>Select time
+              <input id="save-form_time" type="time"  required>
+            </label>
+            
+            <input type="submit" class="success button" value="Save meal" >
+
+          </div>
+        </form>
+   </section>
+   
+   <!--s3-delete-form -->
+   <section >
+       <form id="delete-form">
+          <div class="grid-container">
+            <label>Choose meal period
+              <select id="delete-form_period" required>
+              
+              </select>
+            </label>
+            
+            <input type="submit" class="alert button" value="Delete meal">
+         </div>
+      </form>  
+   </section>
+   
+   <!--s4-current-activity-->
+   <section>
+      <div class="grid-container">
+           <div id="s4-current-activity"></div>
+        </div>
+   </section>
+   <!--s5-added-meals-->
+   <section>
+       <div id="s5-added-meals" class="grid-container"></div>
+   </section>
+    
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="meals.js"></script>
+</body>
+</html>
