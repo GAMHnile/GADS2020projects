@@ -58,11 +58,18 @@ const firstFunction= ()=>{
         deleteSelect.appendChild(deleteOption);
         
         
-        //create table to display meal selections
+        
         mealJsonData = localStorage.getItem(period);
         mealData = JSON.parse(mealJsonData);
         const {meal, time} = mealData;
+        //set time for meals in global variable
+        if(period==='breakfast') breakfastTime = time;
+        if(period==='lunch') lunchTime = time;
+        if(period==='dinner') dinnerTime = time;
         
+        
+        
+        //create tablebody to display meal selections
         const mealBodyRow = document.createElement('tr');
         
         const mealBodyFood = document.createElement('td');
@@ -101,27 +108,29 @@ firstFunction();
 
 
 const currentActivity = document.getElementById('s4-current-activity');
-//const localData= JSON.parse(localStorage);
-//console.log(localData);
+
 
 const displayActivity =()=>{
     const today = new Date();
     const h = today.getHours();
-    const m = today.getMinutes();
+    let m = today.getMinutes();
+    m = checkTime(m);
     
     const currentTime = `${h}:${m}`;
     
-    
     switch(currentTime){
            case breakfastTime:
-            alert('time to eat');
+            currentActivity.innerHTML="Breakfast time"
            break;
            case lunchTime:
-            alert('time to eat');
+            currentActivity.innerHTML="Lunch time"
            break;
            case dinnerTime:
-            alert('time to eat');
+            currentActivity.innerHTML="It's Dinner time"
            break;
+            
+        default:
+           currentActivity.innerHTML= null; 
            
            
            }   
