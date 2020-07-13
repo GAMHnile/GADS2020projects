@@ -106,8 +106,17 @@ const firstFunction= ()=>{
 
 firstFunction();
 
-
+//Current activity div
 const currentActivity = document.getElementById('s4-current-activity');
+
+const currentActivityText = document.createElement('p');
+//create image node for food
+const foodImage = document.createElement('img');
+
+
+//Set image on initial load
+foodImage.setAttribute('src', 'https://miro.medium.com/max/2452/1*8YmyAEb3raC2gqj1AeVcvQ.png');
+currentActivityText.innerHTML= "It's not meal time I'm probably coding";
 
 
 const displayActivity =()=>{
@@ -120,23 +129,35 @@ const displayActivity =()=>{
     
     switch(currentTime){
            case breakfastTime:
-            currentActivity.innerHTML="Breakfast time"
+            foodImage.setAttribute('src', 'https://cdn.tasteatlas.com/images/dishes/b92a3d74b4cf48c28abba34197798049.jpg?w=600&h=450');
+            currentActivityText.innerHTML="Breakfast time (ulcer stay away)"
+            console.log("i'm in here bf");
            break;
            case lunchTime:
-            currentActivity.innerHTML="Lunch time"
+            foodImage.setAttribute('src', 'https://www.royacshop.com/wp-content/uploads/2019/08/How-to-Prepare-Nigerian-Urhobo-Owo-Soup-1.jpeg');
+            currentActivityText.innerHTML="It's time for Lunch"
            break;
            case dinnerTime:
-            currentActivity.innerHTML="It's Dinner time"
+            foodImage.setAttribute('src', 'https://globaltableadventure.com/wp-content/uploads/2014/10/global.lunch_.for_.kids_.img_6785.jpg');
+            currentActivityText.innerHTML="It's Dinner time"
            break;
             
         default:
-           currentActivity.innerHTML= "It's not meal time I'm probably coding"; 
-           
-           
-           }   
+            //15 minutes meal break
+            setTimeout(
+            ()=>{foodImage.setAttribute('src', 'https://miro.medium.com/max/2452/1*8YmyAEb3raC2gqj1AeVcvQ.png');
+           currentActivityText.innerHTML= "It's not meal time I'm probably coding"; 
+            }, 15*60*1000);
+                
+                
+           } 
+    
+    currentActivity.appendChild(foodImage);
+    currentActivity.appendChild(currentActivityText);
+    
 }
            
-setInterval(displayActivity, 5000)
+setInterval(displayActivity, 1000)
 
 
 

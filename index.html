@@ -6,23 +6,25 @@
     <!-- Compressed CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
 
-<!-- Compressed JavaScript -->
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="meal-alarm.css">
     <title>Meal Alarm</title>
 </head>
 <body onload="startTime()">
   <div class="grid-container">
-  <h1>Meal reminder by GAMHnile George</h1>
-    </div>
+      <h1 class="app-main-heading">Meal reminder by GAMHnile George</h1>
+  </div>
+  
+  <div class="desktop-view-grid">
    <!--s1-clock -->
-   <section>
+   <section id="s1-clock">
       <div class="grid-container">
            <div id="main-time"></div>
       </div>
    </section>
    <!--s2-entry-form -->
-   <section >
+   <section id="s2-entry-form" >
        <form id="save-form" >
           <div class="grid-container">
             <label>Choose meal period
@@ -48,7 +50,7 @@
    </section>
    
    <!--s3-delete-form -->
-   <section >
+   <section id="s3-delete-form">
        <form id="delete-form">
           <div class="grid-container">
             <label>Choose a meal to delete
@@ -63,17 +65,17 @@
    </section>
    
    <!--s4-current-activity-->
-   <section>
+   <section id="s4-current-activity-section">
       <div class="grid-container">
            <div id="s4-current-activity"></div>
         </div>
    </section>
+    </div>
    <!--s5-added-meals-->
    <section>
        <div id="s5-added-meals" class="grid-container"></div>
    </section>
     
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="meals.js"></script>
 </body>
 </html>

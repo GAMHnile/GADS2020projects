@@ -70,3 +70,54 @@
   }
 }
 
+.app-main-heading{
+    text-align: center;
+    font-family: 'Merienda', cursive;
+    font-weight: 700;
+}
+/*style for clock*/
+#main-time{
+    text-align: center;
+    font-size: 2rem;
+    border: 2px solid pink;
+}
+
+
+/*main grid styles */
+#s1-clock{grid-area: s1-clock;}
+#s2-entry-form{grid-area: s2-entry-form; }
+#s3-delete-form{grid-area: s3-delete-form;}
+#s4-current-activity-section{grid-area: s4-current-activity-section;}
+.desktop-view-grid{
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 2rem;
+    grid-template-areas: 
+        "s1-clock"
+        "s2-entry-form"
+        "s3-delete-form"
+        "s4-current-activity-section"
+
+}
+
+@media (min-width: 640px){
+    .desktop-view-grid{
+    margin: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 2rem;
+    grid-template-areas: 
+        "s1-clock s2-entry-form"
+        "s4-current-activity-section s2-entry-form"
+        "s4-current-activity-section s3-delete-form"
+        ;
+        
+
+}
+
+    
+    
+}
