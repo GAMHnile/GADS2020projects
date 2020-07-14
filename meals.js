@@ -164,7 +164,7 @@ setInterval(displayActivity, 1000)
 
 // Actions for Saving meals
 document.querySelector("#save-form").addEventListener("submit", function(event) {
-    //event.preventDefault();
+    event.preventDefault();
     const period = document.getElementById('save-form_period').value;
     const mealName = document.getElementById('save-form_meal-name').value;
     const time = document.getElementById('save-form_time').value;
@@ -175,6 +175,7 @@ document.querySelector("#save-form").addEventListener("submit", function(event) 
     })
     
     window.localStorage.setItem(period, mealDetails)
+    firstFunction();
     
     alert(`${period} saved`); 
     

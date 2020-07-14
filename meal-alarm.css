@@ -74,12 +74,15 @@
     text-align: center;
     font-family: 'Merienda', cursive;
     font-weight: 700;
+    background-color: silver;
+    color: white;
 }
 /*style for clock*/
 #main-time{
     text-align: center;
     font-size: 2rem;
     border: 2px solid pink;
+    
 }
 
 
