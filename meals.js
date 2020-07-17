@@ -164,7 +164,7 @@ setInterval(displayActivity, 1000)
 
 // Actions for Saving meals
 document.querySelector("#save-form").addEventListener("submit", function(event) {
-    //event.preventDefault();
+    event.preventDefault();
     const period = document.getElementById('save-form_period').value;
     const mealName = document.getElementById('save-form_meal-name').value;
     const time = document.getElementById('save-form_time').value;
@@ -178,17 +178,30 @@ document.querySelector("#save-form").addEventListener("submit", function(event) 
 
     
     alert(`${period} saved`); 
+    const mealView = document.getElementById('s5-added-meals');
+    const deleteSelect = document.getElementById('delete-form_period');
+    
+    deleteSelect.innerHTML= null;
+    mealView.innerHTML = null;
+    firstFunction();
     
 }, false);
 
 
 // Action for deleting meal
 document.querySelector("#delete-form").addEventListener("submit", function(event) {
-
+    event.preventDefault();
     
     const period = document.getElementById('delete-form_period').value;
     
     window.localStorage.removeItem(period)
-     alert(`${period} deleted`); 
+    alert(`${period} deleted`); 
+    const mealView = document.getElementById('s5-added-meals');
+    const deleteSelect = document.getElementById('delete-form_period');
+    
+    deleteSelect.innerHTML= null;
+    mealView.innerHTML = null;
+    firstFunction();
+    
 }, false);
 
